@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<style>
+body{
+ background:#D6D6D6;
+ overflow-y:auto;
+ overflow-x:hidden;
+}
+
+
+.main-navtop{
+	width:100%;
+	background:none;
+	border:none;
+	margin:0;
+	padding:30px;
+	border-radius:0;
+}
+.fixedTop{
+	position:fixed;
+	top:0;
+	z-index:1;
+	padding:0;
+	background:#FFCC00;
+	box-shadow: 0 0 20px 5px;
+}
+
+.s{
+    position: relative;
+    min-height: 100vh;
+    box-sizing: border-box;
+	transform-style: inherit;
+	padding: 10vh 10%;
+
+}
+h1{
+
+}
+.s h1{
+	font-size:16vh;
+}
+.ts h1 {
+	color:#6C6C6C;
+	text-shadow: 0 0.01em #FFF;
+}
+.ps{
+	background: no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.ps h1 span{
+	color:#fff;
+	text-shadow: none;
+	background:#FFCC00;
+}
+
+.s1{
+	background-image: url("big_148e27043caed7faa6889a046259a96ee68b9f14.jpg");
+}
+.s3{
+	background-image: url("big_80c292f25032f9c1243e97cecfae1034d1a328f7.jpg");
+}
+.s5{
+	background-image: url("big_72841a07a4587590409252db89448715670d64bc.jpg");
+}
+</style>
+
+</head>
+<body>
+	<section class="s ps s1 container-fluid">
+		<h1><span>Hello!</span></h1>
+	</section>	
+	<div class="top-wrap"> 
+	<nav class="main-navtop navbar navbar-default" role="navigation">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">Brand</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li class="active"><a href="#">Link</a></li>
+			<li><a href="#">Link</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+			  <ul class="dropdown-menu">
+				<li><a href="#">Action</a></li>
+				<li><a href="#">Another action</a></li>
+				<li><a href="#">Something else here</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Separated link</a></li>
+				<li class="divider"></li>
+				<li><a href="#">One more separated link</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		  <form class="navbar-form navbar-left" role="search">
+			<div class="form-group">
+			  <input type="text" class="form-control" placeholder="Search">
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		  </form>
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Link</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+			  <ul class="dropdown-menu">
+				<li><a href="#">Action</a></li>
+				<li><a href="#">Another action</a></li>
+				<li><a href="#">Something else here</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Separated link</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	</div><!-- top_wrap -->
+	<section class="s ts s2 container-fluid">
+		<h1><span>How are you?</span></h1>
+	</section>
+	<section class="s ps s3 container-fluid">
+		<h1><span>Look Here</span></h1>
+	</section>
+	<section class="s ts s4 container-fluid">
+	<h1><span>Take this..</span></h1>
+		<div class="row">
+			<div class="tr col-xs-12 col-sm-6 col-md-4">
+				<p>HTML /CSS</p>
+			</div>
+			<div class="tr col-xs-12 col-sm-6 col-md-4">
+				<p>Ux FrontEnd Design</p>
+			</div>
+			<div class="tr col-xs-12 col-sm-6 col-md-4">
+				<p>Full Stack BackEnd </p>
+			</div>
+		</div>
+	</section>
+	<section class="s ps s5 container-fluid">
+	<h1><span>Good Bye.</span></h1>
+	</section>
+	<section class="s ts s6= container-fluid">
+	<h1><span>Good Bye.</span></h1>
+	</section>
+	<section class="s ts s7 container-fluid">
+	<h1><span>Good Bye.</span></h1>
+	</section>
+	<section class="s ts s8 container-fluid">
+	<h1><span>Good Bye.</span></h1>
+	</section>
+	<section class="s ts s9 container-fluid">
+	<h1><span>Good Bye.</span></h1>
+	</section>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script>
+	 /////////////////////// positioning
+	 var mainNav = $('.main-navtop');
+	 var areaY = $(window).height() + mainNav.height()+60;
+	$(window).resize(function(){
+		areaY = $(window).height() + mainNav.height();
+	});
+	var isFixed = true;
+
+
+	 $(window).scroll( function() {	 
+			 var doFix = $(window).scrollTop() > areaY;	 
+			 
+			 if (doFix && !isFixed) {
+				 mainNav.hide().addClass('fixedTop').fadeIn();
+				 isFixed = true;
+			 }
+			 if (!doFix && isFixed){
+				 mainNav.removeClass('fixedTop');
+				 isFixed = false;
+			 }
+			 
+	  }); 
+	</script>
+</body>
+</html>
