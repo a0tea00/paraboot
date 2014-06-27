@@ -224,8 +224,7 @@ $yellow-headline-color:$brand-primary;
 }
 
 .content-title-default{
-	@extend .slide-headline-has-bg;
-	min-height:33vh;
+	@include makeParaSlide( 33vh);	
 	h1{
 		@include makeGrayHeadline(3vmax);
 	}
