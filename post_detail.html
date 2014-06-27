@@ -128,35 +128,10 @@ We must, we must, we must get our hands on an advanced reader </p>
 </section>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 <script>
-/////////////////////// positioning
-
-
-function main_nav(main_nav_name, offset){
-var mainNav = $(main_nav_name);
-var areaY = $(window).height()*offset; 
-
-		var isFixed = true;
-		$(window).resize(function(){
-			areaY = $(window).height();
-		});
-
-		$(window).scroll( function() {	
-		var doFix = $(window).scrollTop() > areaY;	
-
-		if (doFix && !isFixed) {
-		mainNav.hide().addClass('navbar-fixed-top yellow-navtop').fadeIn();
-		isFixed = true;
-		}
-		if (!doFix && isFixed){
-		mainNav.hide().removeClass('navbar-fixed-top yellow-navtop').fadeIn();
-		isFixed = false;
-		}
-
-		});
-}
-
-main_nav('.main-navtop', 0.33);
+	/////////onload
+	toScrollFixedTop('.main-navtop', 0.33);
 </script>
 </body>
 </html>

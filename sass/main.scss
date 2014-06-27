@@ -65,35 +65,43 @@ Custom Mixins
 @mixin common-box-shadow(){
 	box-shadow:0 -1px 10px rgba(0,0,0,.7);
 }
-
-.black-bg
-{
-	background:#000;
-}
-
 @mixin nav-common()
 {
 	width:100%;
 	margin:0;
 }
 
-.main-navtop-fp
+/*colors*/
+
+.black-bg
 {
-	@extend .navbar;
-	@extend .navbar-default;
-	@include nav-common;
-	padding:30px;
+	background:#000;
 }
+
+.gray-bg{
+	background:$brand-set-gray;
+}
+
 .main-navtop
 {
 	@extend .navbar;
 	@extend .navbar-default;
 	@include nav-common;
 }
+.main-navtop-fp
+{
+	@extend .main-navtop;
+	padding:30px;
+}
 
-.yellow-navtop{
+/*main nav fix top*/
+.yellow-navtop-fixedtop{
+	@extend .navbar-fixed-top;
 	background: darken($brand-set-yellow, 3%);
+	
+	/*remove custom spacing*/
 	padding: 0;
+	
 	@include common-box-shadow();
 	
 	.navbar-nav {
@@ -117,120 +125,119 @@ Custom Mixins
     }
 }
 
+/* headline typo*/
+$headline-line-height : 150%;
+$gray-headline-color: #6C6C6C;
+$yellow-headline-color:$brand-primary;
 
-
-
-
-.s{
-	position:relative;
-	min-height:100vh;
-	box-sizing:border-box;
-	padding:10vh 10%
-}
-
-
-.s:before, .tt-s:before, .pt-s:before
-{
-	content:"";
-	position:absolute;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
-	@include common-box-shadow();
-	z-index:-1
-}
-
-.s,.s:before, .pt-s, .pt-s:before
-{
-	background:50% 50% / cover
-}
-
-.s h1, .pt-s h1, .tt-s h1
-{
-	
-	line-height:150%
-}
-.s h1
-{
-	
-	font-size:5vmax;
-}
- .pt-s h1, .tt-s h1
-{
-	font-size:3vmax;
-}
-
-.content-s h2, .content-s h3{
-	
-}
-
-.ps:before
-{
-	opacity:0.8
-}
-
-.ps h1
-{	
+.default-headline{
 	display:inline;
-	color:#fff;
-	text-shadow:none;
-	background:#FFCC00;
-	box-shadow:.3em 0 0 #FFCC00, -.3em 0 0 #FFCC00
+	float:none;
+	line-height:$headline-line-height;
 }
 
-.s1:before
-{
-	background-image:url(../big_148e27043caed7faa6889a046259a96ee68b9f14.jpg);
-	background-attachment:fixed
-}
-
-.s3:before
-{
-	background-image:url(../big_80c292f25032f9c1243e97cecfae1034d1a328f7.jpg);
-	background-attachment:fixed
-}
-
-.s5
-{
-	background-image:url(../big_72841a07a4587590409252db89448715670d64bc.jpg);
-	background-attachment:fixed
-}
-
-
-
-
-
-.pt-s, .tt-s{
-	position:relative;
-	min-height:33vh;
-	box-sizing:border-box;
-	padding:10vh 10%
-}
-.pt-s:before
-{
+@mixin makeGrayHeadline($size){
+	@extend .default-headline;
+	@if $size{
+		font-size:$size;
+	}
 	
-	opacity:1
+	color:$gray-headline-color;
+	text-shadow:0 .02em #FFF;
 }
+@mixin makeYellowHeadline($size){
+	@extend .default-headline;
+	font-size:$size;
+	color:#FFF;
+	background:$yellow-headline-color;
+	box-shadow:.3em 0 0 $yellow-headline-color, -.3em 0 0 $yellow-headline-color;
 
-.pt-s h1 span
-{
-	color:#fff;
-	background:#FFCC00;
-	box-shadow:.3em 0 0 #FFCC00, -.3em 0 0 #FFCC00
-}
-
-.gray-bg,.ts:before,.content-s:before
-{
-	background:#dcdcdc
 }
 
 
-.ts h1,.content-s h1, .content-s h2, .content-s h3, .tt-s h1
-{
-	color:#6C6C6C;
-	text-shadow:0 .02em #FFF
+/*Panel, Slide, Banner...*/
+
+@mixin makeParaSlide( $min-height,$z-index:-1){
+	position:relative;
+	min-height:$min-height;
+	box-sizing:border-box;
+	padding:10vh 10%;	
+	
+	&:before{
+		content:"";
+		position:absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		@include common-box-shadow();
+		z-index:$z-index;
+	}
+	
 }
+
+.slide-headline-default{
+	@include makeParaSlide( 100vh);
+	
+	&:before{
+	  background-color: $brand-set-gray;
+	}
+	h1{
+		@include makeGrayHeadline(5vmax);
+	}
+	
+}
+
+.slide-headline-has-bg{
+	@include makeParaSlide(100vh);	
+	
+	&:before{
+		background-position: 50% 50% /cover;
+		opacity:0.8;
+	}
+	
+	h1{
+		@include makeYellowHeadline(5vmax);
+	}
+}
+
+.content-title-default{
+	@include makeParaSlide(33vh);
+	
+	&:before{
+	  background-color: $brand-set-gray;
+	}
+	h1{
+		@include makeGrayHeadline(3vmax);
+	}
+}
+
+.content-title-has-bg{
+	@include makeParaSlide( 33vh);	
+	
+	&:before{
+		background-position: 50% 50% /cover;
+	}
+	
+	h1{
+		@include makeYellowHeadline(3vmax);
+	}
+}
+
+.content-section{
+	h1{
+	@include makeGrayHeadline($font-size-h1);
+	}
+	h2{
+	@include makeGrayHeadline($font-size-h2);
+	}
+	h3{
+	@include makeGrayHeadline($font-size-h3);
+	}
+}
+
+
+
 
 
 

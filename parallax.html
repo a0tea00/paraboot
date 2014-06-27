@@ -3,13 +3,34 @@
 <head>
 <meta charset="utf-8">
 <title>TreyH</title>
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
 <link rel="stylesheet" href="css/main.css">
+<style>
 
+
+.s1:before
+{
+	background-image:url(big_148e27043caed7faa6889a046259a96ee68b9f14.jpg);
+	background-attachment:fixed
+}
+
+.s3:before
+{
+	background-image:url(big_80c292f25032f9c1243e97cecfae1034d1a328f7.jpg);
+	background-attachment:fixed
+}
+
+.s5
+{
+	background-image:url(big_72841a07a4587590409252db89448715670d64bc.jpg);
+	background-attachment:fixed
+}
+
+</style>
 
 </head>
 <body class= "black-bg">
-<section class="s ps s1 ">
+<section class="slide-headline-has-bg s1 ">
 <h1><span>Example 2 - Image Transparency - Hover Effect</span></h1>
 	
 </section>	
@@ -68,13 +89,13 @@
 </div><!-- /. -->
 </nav>
 </div><!-- top_wrap -->
-<section class="s ts s2 ">
+<section class="slide-headline-default s2 ">
 <h1><span>How are you?</span></h1>
 </section>
-<section class="s ps s3 ">
+<section class="slide-headline-has-bg s3 ">
 <h1><span>Look Here</span></h1>
 </section>
-<section class="s ts s4 ">
+<section class="slide-headline-default s4 ">
 <h1><span>Take this..</span></h1>
 <div class="row">
 <div class="tr col-xs-12 col-sm-6 col-md-4">
@@ -88,51 +109,29 @@
 </div>
 </div>
 </section>
-<section class="s ps s5 ">
+<section class="slide-headline-has-bg s5 ">
 <h1><span>Good Bye.</span></h1>
 </section>
-<section class="s ts s6= ">
+<section class="slide-headline-default s6= ">
 <h1><span>Good Bye.</span></h1>
 </section>
-<section class="s ts s7 ">
+<section class="slide-headline-default s7 ">
 <h1><span>Good Bye.</span></h1>
 </section>
-<section class="s ts s8 ">
+<section class="slide-headline-default s8 ">
 <h1><span>Good Bye.</span></h1>
 </section>
-<section class="s ts s9 ">
+<section class="slide-headline-default s9 ">
 <h1><span>Good Bye.</span></h1>
 </section>
 
 
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 <script>
-function main_nav(main_nav_name, offset){
-var mainNav = $(main_nav_name);
-var areaY = $(window).height()*offset; 
-
-		var isFixed = true;
-		$(window).resize(function(){
-			areaY = $(window).height();
-		});
-
-		$(window).scroll( function() {	
-		var doFix = $(window).scrollTop() > areaY;	
-
-		if (doFix && !isFixed) {
-		mainNav.hide().addClass('navbar-fixed-top yellow-navtop').fadeIn();
-		isFixed = true;
-		}
-		if (!doFix && isFixed){
-		mainNav.hide().removeClass('navbar-fixed-top yellow-navtop').fadeIn();
-		isFixed = false;
-		}
-
-		});
-}
-
-main_nav('.main-navtop-fp', 1);
+	/////////onload
+	toScrollFixedTop('.main-navtop-fp', 1);
 </script>
 </body>
 </html>
