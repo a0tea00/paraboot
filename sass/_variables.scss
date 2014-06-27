@@ -21,12 +21,15 @@
 // $gray-lighter:           lighten(#000, 93.5%) // #eee
 
 // $brand-primary:         #428bca
-$brand-primary:         #0088A5;
+$brand-set-gray: #DCDCDC;
+$brand-set-green: #008971;
+$brand-set-yellow: #FFCC00;
+$brand-set-lightyellow: #FFFF80;
+$brand-set-black: #000000;
+$brand-set-white: #FFFFFF;
 
-$brand-set-color1-1: #F2D272;
-$brand-set-color1-2: #CCBE6F;
-$brand-set-color2: #B7B4B4;
-$brand-set-color3: #16646F;
+$brand-primary:         $brand-set-yellow;
+
 
 // $brand-success:         #5cb85c
 // $brand-info:            #5bc0de
@@ -43,7 +46,7 @@ $brand-set-color3: #16646F;
 // $text-color:            $gray-dark
 
 //* Global textual link color.
-$link-color: $brand-primary;
+$link-color: $brand-set-green;
 //* Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%);
 
@@ -149,15 +152,17 @@ $link-hover-color:      darken($link-color, 15%);
 
 // $btn-font-weight:                normal
 //$btn-default-color:				#333;
-$btn-default-color:            $brand-set-color3;
+
 // $btn-default-bg:                 #fff
- $btn-default-bg:              $brand-set-color1-1;
+
 // $btn-default-border:             #ccc
 
 
 // $btn-primary-color:              #fff
+ $btn-primary-color:              $brand-set-white;
  $btn-primary-bg:                 $brand-primary;
 // $btn-primary-border:             darken($btn-primary-bg, 5%)
+ $btn-primary-border:             darken($btn-primary-bg, 5%);
 
 // $btn-success-color:              #fff
 // $btn-success-bg:                 $brand-success
@@ -287,7 +292,7 @@ $btn-default-color:            $brand-set-color3;
 
 // Large screen / wide desktop
 // Note: Deprecated $screen-lg and $screen-lg-desktop as of v3.0.1
-$screen-lg:                  1400px;
+$screen-lg:                  1200px;
 $screen-lg-min:              $screen-lg;
 $screen-lg-desktop:          $screen-lg-min;
 
@@ -337,30 +342,38 @@ $screen-md-max:              ($screen-lg-min - 1);
 // $navbar-height:                    50px
 // $navbar-margin-bottom:             $line-height-computed
 // $navbar-border-radius:             $border-radius-base
+ $navbar-border-radius:               0;
+ 
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2))
 // $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2)
 // $navbar-collapse-max-height:       340px
 
 //$navbar-default-color:             #777
- $navbar-default-color: $gray;
+$navbar-default-color:             $brand-set-white;
+$navbar-primary-color: 			$brand-set-white;
 //$navbar-default-bg:                #f8f8f8
- $navbar-default-bg:                transparent;
+ $navbar-default-bg:                $brand-set-green;
  // $navbar-default-border:            darken($navbar-default-bg, 6.5%)
 $navbar-default-border:    transparent;
 
 // Navbar links
 // $navbar-default-link-color:                #777
+ $navbar-default-link-color:                $brand-set-white;
 // $navbar-default-link-hover-color:          #333
-// $navbar-default-link-hover-bg:             transparent
+ $navbar-default-link-hover-color:          $brand-set-lightyellow;
+ $navbar-default-link-hover-bg:             lighten($navbar-default-bg, 6.5%);
 // $navbar-default-link-active-color:         #555
+$navbar-default-link-active-color:         $brand-set-lightyellow;
 // $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%)
-// $navbar-default-link-disabled-color:       #ccc
+$navbar-default-link-active-bg:            lighten($navbar-default-bg, 6.5%);
+$navbar-default-link-disabled-color:       darken($brand-set-green, 6.5%);
 // $navbar-default-link-disabled-bg:          transparent
 
 // Navbar brand label
 // $navbar-default-brand-color:               $navbar-default-link-color
-// $navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%)
-// $navbar-default-brand-hover-bg:            transparent
+$navbar-default-brand-color:               $navbar-default-link-color;
+$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%);
+$navbar-default-brand-hover-bg:            transparent;
 
 // Navbar toggle
 // $navbar-default-toggle-hover-bg:           #ddd
@@ -399,7 +412,6 @@ $navbar-default-border:    transparent;
 //=== Shared nav styles
 // $nav-link-padding:                          10px 15px
 // $nav-link-hover-bg:                         $gray-lighter
-$nav-link-hover-bg:             $brand-set-color1-1;
 
 // $nav-disabled-link-color:                   $gray-light
 // $nav-disabled-link-hover-color:             $gray-light
