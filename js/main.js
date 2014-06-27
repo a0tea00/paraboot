@@ -4,7 +4,7 @@ var areaY = $(window).height()*offset;
 
 		var isFixed = true;
 		$(window).resize(function(){
-			areaY = $(window).height();
+			areaY = $(window).height()*offset;
 		});
 
 		$(window).scroll( function() {	

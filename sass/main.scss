@@ -29,7 +29,7 @@
 @import "bootstrap/pager";
 @import "bootstrap/labels";
 //@import "bootstrap/badges";
-//@import "bootstrap/jumbotron";
+@import "bootstrap/jumbotron";
 @import "bootstrap/thumbnails";
 @import "bootstrap/alerts";
 //@import "bootstrap/progress-bars";
@@ -43,7 +43,7 @@
 //@import "bootstrap/modals";
 //@import "bootstrap/tooltip";
 //@import "bootstrap/popovers";
-//@import "bootstrap/carousel";
+@import "bootstrap/carousel";
 
 // Utility classes
 @import "bootstrap/utilities";
@@ -134,6 +134,7 @@ $yellow-headline-color:$brand-primary;
 	display:inline;
 	float:none;
 	line-height:$headline-line-height;
+	clear:both;
 }
 
 @mixin makeGrayHeadline($size){
@@ -177,8 +178,8 @@ $yellow-headline-color:$brand-primary;
 }
 
 .slide-headline-default{
-	@include makeParaSlide( 100vh);
-	
+	@include makeParaSlide( 100vh);	
+	font-size : 3vmax;
 	&:before{
 	  background-color: $brand-set-gray;
 	}
@@ -190,9 +191,10 @@ $yellow-headline-color:$brand-primary;
 
 .slide-headline-has-bg{
 	@include makeParaSlide(100vh);	
-	
+	font-size : 3vmax;
 	&:before{
 		background-position: 50% 50% /cover;
+		background-attachment: fixed;
 		opacity:0.8;
 	}
 	
@@ -217,6 +219,7 @@ $yellow-headline-color:$brand-primary;
 	
 	&:before{
 		background-position: 50% 50% /cover;
+		background-attachment: fixed;
 	}
 	
 	h1{
