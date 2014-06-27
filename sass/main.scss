@@ -150,6 +150,7 @@ $yellow-headline-color:$brand-primary;
 	color:$gray-headline-color;
 	text-shadow:0 .02em #FFF;
 }
+//make a universial color headline maker
 @mixin makeYellowHeadline($size){
 	@extend .default-headline;
 	font-size:$size;
@@ -159,10 +160,21 @@ $yellow-headline-color:$brand-primary;
 
 }
 
+@mixin makeGreenHeadline($size){
+	@extend .default-headline;
+	font-size:$size;
+	color:#FFF;
+	background:$brand-set-green;
+	box-shadow:.3em 0 0 $brand-set-green, -.3em 0 0 $brand-set-green;
+
+}
+
 .h3-yellow{
 	@include makeYellowHeadline($font-size-h3);
 }
-
+.h3-green{
+	@include makeGreenHeadline($font-size-h3);
+}
 
 /*Panel, Slide, Banner...*/
 
@@ -212,11 +224,8 @@ $yellow-headline-color:$brand-primary;
 }
 
 .content-title-default{
-	@include makeParaSlide(33vh);
-	
-	&:before{
-	  background-color: $brand-set-gray;
-	}
+	@extend .slide-headline-has-bg;
+	min-height:33vh;
 	h1{
 		@include makeGrayHeadline(3vmax);
 	}
