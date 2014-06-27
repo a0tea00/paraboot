@@ -801,7 +801,9 @@ $navbar-default-brand-hover-bg:            transparent;
 //##
 
 // $code-color:                  #c7254e
+ $code-color:                  $brand-set-black;
 // $code-bg:                     #f9f2f4
+ $code-bg:                     $brand-set-lightyellow;
 
 // $kbd-color:                   #fff
 // $kbd-bg:                      #333
@@ -809,6 +811,9 @@ $navbar-default-brand-hover-bg:            transparent;
 // $pre-bg:                      #f5f5f5
 // $pre-color:                   $gray-dark
 // $pre-border-color:            #ccc
+$pre-bg:                      $brand-set-lightyellow;
+$pre-color:                   $brand-set-black;
+$pre-border-color:            darken($brand-set-lightyellow, 50%);
 // $pre-scrollable-max-height:   340px
 
 //== Type

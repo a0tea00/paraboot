@@ -58,6 +58,10 @@
   src: url('fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+/*basic tag override*/
+hr{
+	box-shadow:0 -1px 0 1px darken($brand-set-gray, 15% );
+}
 /*
 Custom Mixins
 
@@ -153,6 +157,10 @@ $yellow-headline-color:$brand-primary;
 	background:$yellow-headline-color;
 	box-shadow:.3em 0 0 $yellow-headline-color, -.3em 0 0 $yellow-headline-color;
 
+}
+
+.h3-yellow{
+	@include makeYellowHeadline($font-size-h3);
 }
 
 
