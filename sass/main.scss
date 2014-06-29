@@ -136,44 +136,43 @@ $yellow-headline-color:$brand-primary;
 
 .default-headline{
 	display:inline;
-	float:none;
+	float:none !important;
 	line-height:$headline-line-height;
 	clear:both;
 }
 
 @mixin makeGrayHeadline($size){
 	@extend .default-headline;
-	@if $size{
-		font-size:$size;
-	}
-	
+
+	font-size:$size;
+
 	color:$gray-headline-color;
 	text-shadow:0 .02em #FFF;
 }
 //make a universial color headline maker
-@mixin makeYellowHeadline($size){
+@mixin makeColorHeadline($bgcolor, $size, $txtcolor: #fff){
 	@extend .default-headline;
+
 	font-size:$size;
-	color:#FFF;
-	background:$yellow-headline-color;
-	box-shadow:.3em 0 0 $yellow-headline-color, -.3em 0 0 $yellow-headline-color;
+
+	color:$txtcolor;
+	background:$bgcolor;
+	box-shadow:.3em 0 0 $bgcolor, -.3em 0 0 $bgcolor;
+	&:hover{
+	color: $txtcolor;
+	}
+	a, a:hover{
+		color: $txtcolor;
+	}
 
 }
 
-@mixin makeGreenHeadline($size){
-	@extend .default-headline;
-	font-size:$size;
-	color:#FFF;
-	background:$brand-set-green;
-	box-shadow:.3em 0 0 $brand-set-green, -.3em 0 0 $brand-set-green;
-
-}
 
 .h3-yellow{
-	@include makeYellowHeadline($font-size-h3);
+	@include makeColorHeadline($brand-primary, $font-size-h3);
 }
 .h3-green{
-	@include makeGreenHeadline($font-size-h3);
+	@include makeColorHeadline($brand-set-green, $font-size-h3);
 }
 
 /*Panel, Slide, Banner...*/
@@ -219,7 +218,7 @@ $yellow-headline-color:$brand-primary;
 	}
 	
 	h1{
-		@include makeYellowHeadline(5vmax);
+		@include makeColorHeadline($brand-primary, 5vmx);
 	}
 }
 
@@ -239,7 +238,7 @@ $yellow-headline-color:$brand-primary;
 	}
 	
 	h1{
-		@include makeYellowHeadline(3vmax);
+		@include makeColorHeadline($brand-primary, 3vmx);
 	}
 }
 
@@ -255,7 +254,34 @@ $yellow-headline-color:$brand-primary;
 	}
 }
 
+/*grid to layout*/
+.post-side{
+	@extend .col-xs-12; 
+	@extend .col-md-3;
+	@extend .col-lg-3;
+}
+.porfile-pic{
+ @extend .col-xs-4;
+ @extend .col-md-12;
 
+}
+.short-aboutme{
+	@extend .col-xs-8;
+	@extend .col-md-12;
+	
+}
+.post-followup{
+	@extend .col-xs-12;
+	@extend .col-md-6;
+}
+.post-extra,.post-body{
+	@extend .col-xs-12;
+}
+.post-content{
+	@extent .col-xs-12;
+	@extend .col-md-9;
+	@extend .col-lg-9;
+}
 
 
 
