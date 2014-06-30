@@ -55,9 +55,9 @@ left:47vw;
 <p><span class="h3-green">return</span> <span class="h3-yellow">who_i_am;</span></p>
 <p><span class="h3-yellow">}</span></p>
 
-<div class="btn-down"><a href="#s2" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
+<div class="btn-down"><a href="#top-wrap" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
 </section>	
-<div class="top-wrap">
+<div id="top-wrap">
 <nav class="main-navtop-fp" role="navigation">
 <div class="container-fluid">
 <!-- Brand and toggle get grouped for better mobile display -->
@@ -75,7 +75,7 @@ left:47vw;
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <ul class="nav navbar-nav">
 	<li><a href="#s1" class="hash-link">Hi! </a></li>
-	<li><a href="#s2" class="hash-link">Design</a></li>
+	<li><a href="#top-wrap" class="hash-link">Design</a></li>
 	<li><a href="#s3" class="hash-link">Development</a></li>
 	<li><a href="#s4" class="hash-link">Find Me</a></li>
 </ul>
@@ -121,6 +121,8 @@ left:47vw;
 <script>
 	/////////onload
 	toScrollFixedTop('.main-navtop-fp', 1);
+	
+	$('.topwrap').css('height',$('.main-navtop-fp').height());
 	
 	$('.hash-link').click(function() {
       var target = $(this.hash);
