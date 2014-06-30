@@ -218,7 +218,7 @@ $yellow-headline-color:$brand-primary;
 	}
 	
 	h1{
-		@include makeColorHeadline($brand-primary, 5vmx);
+		@include makeColorHeadline($brand-primary, 5vmax);
 	}
 }
 

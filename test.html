@@ -2,161 +2,110 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link href="css/bootstrap.min.css"  rel="stylesheet">
-
+<title>TreyH</title>
+<!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/main.css">
 <style>
-@import url(http://fonts.googleapis.com/css?family=Nunito);
 
-html {
-  height: 100%;
-  overflow: hidden;
+.s1:before
+{
+	background: #ffd621; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #ffd621 13%, #ea8c00 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(13%,#ffd621), color-stop(100%,#ea8c00)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, #ffd621 13%,#ea8c00 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, #ffd621 13%,#ea8c00 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, #ffd621 13%,#ea8c00 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, #ffd621 13%,#ea8c00 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd621', endColorstr='#ea8c00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	opacity:1;
+
 }
 
-body { 
-  margin:0;
-  padding:0;
-	perspective: 1px;
-	transform-style: preserve-3d;
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  font-family: Nunito;
+#s2:before
+{
+	background-image:url(s2.jpg);
+
 }
 
-h1 {
-   font-size: 250%
+.s5
+{
+	background-image:url(big_72841a07a4587590409252db89448715670d64bc.jpg);
+
 }
 
-p {
-  font-size: 140%;
-  line-height: 150%;
-  color: #333;
-}
-
-.slide {
-  position: relative;
-  padding: 25vh 10%;
-  min-height: 100vh;
-  width: 100vw;
-  box-sizing: border-box;
-  box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
-	transform-style: inherit;
-}
-
-img {
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  width: 320px;
-  height: 240px;
-  transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-100%) rotate(2deg);
-  padding: 10px;
-  border-radius: 5px;
-  background: rgba(240,230,220, .7);
-  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
-}
-
-img:last-of-type {
-  transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
-}
-
-.slide:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left:0;
-  right:0;
-}
-
-.title {
-  width: 50%;
-  padding: 5%;
-  border-radius: 5px;
-  background: rgba(240,230,220, .7);
-  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
-}
-
-.slide:nth-child(2n) .title {
-  margin-left: 0;
-  margin-right: auto;
-}
-
-.slide:nth-child(2n+1) .title {
-  margin-left: auto;
-  margin-right: 0;
-}
-
-.slide, .slide:before {
-  background: 50% 50% ;  
-}
-
-.header {
-  text-align: center;
-  font-size: 175%;
-  color: #fff;
-  text-shadow: 0 2px 2px #000;
-}
-
-#title {
-  background-image: url("http://lorempixel.com/output/abstract-q-c-640-480-6.jpg");
-   background-attachment: fixed;  
-}
-
-#slide1:before {
-  background-image: url("http://lorempixel.com/output/abstract-q-c-640-480-4.jpg");
-  transform: translateZ(-1px) scale(2);
-  z-index:-1;
-}
-
-#slide2 {
-  background-image: url("http://lorempixel.com/output/abstract-q-c-640-480-3.jpg");
-  background-attachment: fixed;
-}
-
-#slide3:before {
-  background-image: url("http://lorempixel.com/output/abstract-q-c-640-480-5.jpg");
-  transform: translateZ(-1px) scale(2);
-  z-index:-1;
-}
-
-#slide4 {
-  background: #222;
-}
 </style>
 
 </head>
-<body>
-<div id="title" class="slide header">
-  <h1>Pure CSS Parallax</h1>
+<body class= "black-bg">
+<section class="slide-headline-has-bg s1" id="s1">
+<p><span class="h3-green">function</span> <span class="h3-yellow">Trey_H ( i )</span></p>
+<p><span class="h3-yellow">{</span></p>
+<p class="indent"><span class="h3-green">var</span> <span class="h3-yellow">who_i_am = 'I am Trey Huang. A Web Developer and Grad Student living in NY';</span></p>
+<p><span class="h3-green">if</span> <span class="h3-yellow">(i == "Trey")</span></p>
+<p><span class="h3-green">return</span> <span class="h3-yellow">who_i_am;</span></p>
+<p><span class="h3-yellow">}</span></p>
+<h1>
+</section>	
+<div class="top-wrap">
+<nav class="main-navtop-fp" role="navigation">
+<div class="container-fluid">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#s1">TreyH</a>
 </div>
 
-<div id="slide1" class="slide">
-  <div class="title">
-    <h1>Slide 1</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
-  </div>
-</div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+	<li><a href="#s1" class="hash-link">Hi! </a></li>
+	<li><a href="#s2" class="hash-link">Design</a></li>
+	<li><a href="#s3" class="hash-link">Development</a></li>
+	<li><a href="#s4" class="hash-link">Find Me</a></li>
+</ul>
 
-<div id="slide2" class="slide">
-  <div class="title">
-    <h1>Slide 2</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
-  </div>
-  <img src="http://lorempixel.com/output/abstract-q-c-640-480-6.jpg">
-  <img src="http://lorempixel.com/output/abstract-q-c-640-480-4.jpg"> 
+<ul class="nav navbar-nav navbar-right">
+	<li><a href="parallax.html" class="">Blog</a></li>
+</ul>
 </div>
+</div><!-- /. -->
+</nav>
 
-<div id="slide3" class="slide">
-  <div class="title">
-    <h1>Slide 3</h1>
-    <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
-  </div>
-</div>
+</div><!-- top_wrap -->
+<section class="slide-headline-has-bg " id="s2">
+	<h1>Whit the mind of a designer...</h1>
+</section>
+<section class="slide-headline-has-bg s3 " id="s3">
+<h1><span>Look Here</span></h1>
+</section>
+<section class="slide-headline-has-bg s3 " id="s3">
+<h1><span>Look Here</span></h1>
+</section>
 
-<div id="slide4" class="slide header">
-    <h1>The End</h1>
-</div>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+	/////////onload
+	toScrollFixedTop('.main-navtop-fp', 1);
 	
+	$('.hash-link').click(function() {
+      var target = $(this.hash);
+      target = target.length ? target : $('#s1');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 750);
+        return false;
+      }
+
+  });
+</script>
 </body>
 </html>

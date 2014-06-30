@@ -6,8 +6,19 @@
 <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
 <link rel="stylesheet" href="css/main.css">
 <style>
+.main-navtop-fp{
+    -webkit-transform: translateZ( 0 );
+    transform: translateZ( 0 );
+	z-index:2;
+}
 
-
+#l2:target ~ section.slide-headline-default {
+	-webkit-transform: translateY( -100vh );
+    transform: translateY( -100vh );
+}
+.top-wrap{
+	height:60px;
+}
 .s1:before
 {
 	background-image:url(big_148e27043caed7faa6889a046259a96ee68b9f14.jpg);
@@ -30,7 +41,7 @@
 
 </head>
 <body class= "black-bg">
-<section class="slide-headline-has-bg s1 ">
+<section class="slide-headline-has-bg s1" id="s1">
 <h1><span>Example 2 - Image Transparency - Hover Effect</span></h1>
 
 <div class="jumbotron">
@@ -58,53 +69,25 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <ul class="nav navbar-nav">
-<li class="active"><a href="#">Link</a></li>
-<li><a href="#">Link</a></li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-<ul class="dropdown-menu">
-<li><a href="#">Action</a></li>
-<li><a href="#">Another action</a></li>
-<li><a href="#">Something else here</a></li>
-<li class="divider"></li>
-<li><a href="#">Separated link</a></li>
-<li class="divider"></li>
-<li><a href="#">One more separated link</a></li>
+
+<li><a href="#s1" id="l1">Link 1</a></li>
+<li><a href="#s2" id="l2">Link 2</a></li>
+<li><a href="#s3" id="l3">Link 3</a></li>
 </ul>
-</li>
-</ul>
-<form class="navbar-form navbar-left" role="search">
-<div class="form-group">
-<input type="text" class="form-control" placeholder="Search">
 </div>
-<button type="submit" class="btn btn-default">Submit</button>
-</form>
-<ul class="nav navbar-nav navbar-right">
-<li><a href="#">Link</a></li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-<ul class="dropdown-menu">
-<li><a href="#">Action</a></li>
-<li><a href="#">Another action</a></li>
-<li><a href="#">Something else here</a></li>
-<li class="divider"></li>
-<li><a href="#">Separated link</a></li>
-</ul>
-</li>
-</ul>
-</div><!-- /.navbar-collapse -->
 </div><!-- /. -->
 </nav>
+
 </div><!-- top_wrap -->
-<section class="slide-headline-default s2 ">
+<section class="slide-headline-default s2 " id="s2">
 	<div class="jumbotron">
 	  <h1>Hello, world!</h1>
 	  <p>...</p>
 	  <p><a class="btn btn-primary btn-lg" role="button" href="post_detail.html">Continue Reading</a></p>
 	</div>	
 </section>
-<section class="slide-headline-has-bg s3 ">
-<h1><span>Look Here</span></h1>
+<section class="slide-headline-has-bg s3 " id="s3">
+<h1>Look Here</h1>
 </section>
 <section class="slide-headline-default s4 ">
 <h1><span>Take this..</span></h1>
