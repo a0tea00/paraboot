@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TreyH</title>
+<!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/main.css">
+<style>
+
+.s1:before
+{
+	background: #ffd621; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #ffd621 13%, #ea8c00 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(13%,#ffd621), color-stop(100%,#ea8c00)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, #ffd621 13%,#ea8c00 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, #ffd621 13%,#ea8c00 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, #ffd621 13%,#ea8c00 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center, #ffd621 13%,#ea8c00 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd621', endColorstr='#ea8c00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	opacity:1;
+
+}
+
+#s2:before
+{
+	background-image:url(s2.jpg);
+
+}
+#s3:before
+{
+	background-image:url(s3.jpg);
+
+}
+
+.btn-down{
+position:absolute;
+bottom: 0;
+left:47vw;
+}
+.btn-down a,.btn-down a:hover{
+	color:#fff;
+}
+.btn-down .glyphicon{
+	text-shadow:0 -1px 10px rgba(0,0,0,.7);
+}
+</style>
+
+</head>
+<body class= "black-bg">
+<section class="slide-headline-has-bg s1" id="s1">
+<p><span class="h3-green">function</span> <span class="h3-yellow">Trey_H ( i )</span></p>
+<p><span class="h3-yellow">{</span></p>
+<p class="indent"><span class="h3-green">var</span> <span class="h3-yellow">who_i_am = 'I am Trey Huang. A Web Developer and Grad Student living in NY';</span></p>
+<p><span class="h3-green">if</span> <span class="h3-yellow">(i == "Trey")</span></p>
+<p><span class="h3-green">return</span> <span class="h3-yellow">who_i_am;</span></p>
+<p><span class="h3-yellow">}</span></p>
+
+<div class="btn-down"><a href="#s2" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
+</section>	
+<div class="top-wrap">
+<nav class="main-navtop-fp" role="navigation">
+<div class="container-fluid">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#s1">TreyH</a>
+</div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+	<li><a href="#s1" class="hash-link">Hi! </a></li>
+	<li><a href="#s2" class="hash-link">Design</a></li>
+	<li><a href="#s3" class="hash-link">Development</a></li>
+	<li><a href="#s4" class="hash-link">Find Me</a></li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+	<li><a href="parallax.html" class="">Blog</a></li>
+</ul>
+</div>
+</div><!-- /. -->
+</nav>
+
+</div><!-- top_wrap -->
+<section class="slide-headline-has-bg " id="s2">
+	<h1>Beautiful and Useful</h1>
+	<br>
+	<h1>I believe well designed applications are not just  more beautiful,</h1>
+	<br>
+	<h1>and they are more useful too.</h1>
+	<div class="btn-down"><a href="#s3" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
+</section>
+<section class="slide-headline-has-bg" id="s3">
+<h1>Useful and Beautiful</h1>
+<br>
+<h1>Build something people actually use.</h1>
+<br>
+<h1>It's the right thing to do</h1>
+<div class="btn-down"><a href="#s4" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
+</section>
+<section class="slide-headline-default" id="s4">
+<h1>Where you can find me?</h1>
+<br>
+
+<p class="col-xs-12 col-md-4"><span class="h3-yellow">I am studying at</span> <span class="h3-green">University at Albany, SUNY.</span></p>
+<p class="col-xs-12 col-md-4"><span class="h3-yellow">Me + Social:</span> <span class="h3-green">Twitter</span> <span class="h3-green">Linkedin</span> <span class="h3-green">Github</span></p>
+<p class="col-xs-12 col-md-4"><span class="h3-yellow">My Website:</span> <span class="h3-green">Blog</span></p>
+<p class="col-xs-12 col-md-4"><span class="h3-yellow">Send me a message:</span> <span class="h3-green">Here</span></p>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+	/////////onload
+	toScrollFixedTop('.main-navtop-fp', 1);
+	
+	$('.hash-link').click(function() {
+      var target = $(this.hash);
+      target = target.length ? target : $('#s1');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 750);
+        return false;
+      }
+
+  });
+</script>
+</body>
+</html>
