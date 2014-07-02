@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport " content="width=device-width, initial-scale=1">
 <title>TreyH</title>
 <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
 <link rel="stylesheet" href="css/main.css">
@@ -27,13 +28,13 @@
 #development:before
 {
 	background-image:url(s3.jpg);
-	opacity:0.5;
 }
 
 .btn-down{
 position:absolute;
 bottom: 0;
-left:47vw;
+left:50%;
+font-size:50px;
 }
 .btn-down a,.btn-down a:hover{
 	color:#fff;
@@ -41,21 +42,25 @@ left:47vw;
 .btn-down .glyphicon{
 	text-shadow:0 -1px 10px rgba(0,0,0,.7);
 }
-.h3-yellow, .h3-green{
-	font-size:2vmax;
-}
+
 </style>
 
 </head>
 <body class= "black-bg">
 <section class="slide-headline-has-bg" id="open">
-<p><span class="h3-green">function</span> <span class="h3-yellow">Trey_H ( i )</span></p>
-<p><span class="h3-yellow">{</span></p>
-<p class="indent"><span class="h3-green">var</span> <span class="h3-yellow">who_i_am = 'I am Trey Huang. A Web Developer and Grad Student living in NY';</span></p>
-<p><span class="h3-green">if</span> <span class="h3-yellow">(i == "Trey")</span></p>
-<p><span class="h3-green">return</span> <span class="h3-yellow">who_i_am;</span></p>
-<p><span class="h3-yellow">}</span></p>
-
+<div="row">
+<h1><span class="clr-font-green">function</span> <span class="clr-font-yellow">Trey_H ( i )</span></h1>
+<br>
+<h1><span class="clr-font-yellow">{</span></h1>
+<br>
+<h1>span class="clr-font-green">var</span> <span class="clr-font-yellow">who_i_am = 'I am Trey Huang. A Web Developer and Grad Student living in NY';</span></h1>
+<br>
+<h1><span class="clr-font-green">if</span> <span class="clr-font-yellow">(i == "Trey")</span></h1>
+<br>
+<h1><span class="clr-font-green">return</span> <span class="clr-font-yellow">who_i_am;</span></h1>
+<br>
+<h1><span class="clr-font-yellow">}</span></h1>
+</div="row">
 <div class="btn-down"><a href="#top-wrap" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
 </section>	
 <div id="top-wrap">
@@ -95,7 +100,7 @@ left:47vw;
 	<br>
 	<h1>I believe well designed applications are not just  more beautiful,</h1>
 	<br>
-	<h1>and they are more useful too.</h1>
+	<h1>they are also more useful.</h1>
 	<div class="btn-down"><a href="#development" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
 </section>
 <section class="slide-headline-has-bg" id="development">
@@ -113,11 +118,11 @@ left:47vw;
 	</div>
 	<div class="col-xs-12 col-sm-9">
 		<div class="row">
-			<h1>Where can you find me?</h1>
-			<p class="col-xs-12 col-md-6"><span class="h3-yellow">I am studying at</span> <span class="h3-green">University at Albany, SUNY.</span></p>
-			<p class="col-xs-12 col-md-6"><span class="h3-yellow">Me + Social:</span> <span class="h3-green"><a href="http://twitter.com/treyhuang" rel="external">Twitter</a></span> <span class="h3-green"><a href="https://www.linkedin.com/pub/trey-huang/3b/398/9b2" rel="external" >Linkedin</a></span> </p>
-			<!--<p class="col-xs-12 col-md-4"><span class="h3-yellow">My Website:</span> <span class="h3-green">Blog</span></p>-->
-			<!--<p class="col-xs-12 col-md-4"><span class="h3-yellow">Send me a message:</span> <span class="h3-green">Here</span></p>-->
+			<div class="col-xs-12"><h1 >Where can you find me?</h1></p>
+			<div class="col-xs-12 col-md-6"><h3><span class="clr-font-yellow">I am studying at</span> <span class="clr-font-green">University at Albany, SUNY.</span></h3></div>
+			<div class="col-xs-12 col-md-6"><h3><span class="clr-font-yellow">Me + Social:</span> <span class="clr-font-green"><a href="http://twitter.com/treyhuang" rel="external">Twitter</a></span> <span class="clr-font-green"><a href="https://www.linkedin.com/pub/trey-huang/3b/398/9b2" rel="external" >Linkedin</a></span></h3> </div>
+			<!--<p class="col-xs-12 col-md-4"><span class="clr-font-yellow">My Website:</span> <span class="clr-font-green">Blog</span></p>-->
+			<!--<p class="col-xs-12 col-md-4"><span class="clr-font-yellow">Send me a message:</span> <span class="clr-font-green">Here</span></p>-->
 		</div>
 	</div>
 </div>
@@ -138,7 +143,7 @@ left:47vw;
 	/////////onload
 	toScrollFixedTop('.main-navtop-fp', 1);
 	
-	$('.topwrap').css('height',$('.main-navtop-fp').height());
+	$('#top-wrap').css('height',$('.main-navtop-fp').height());
 	
 	$('.hash-link').click(function() {
       var target = $(this.hash);

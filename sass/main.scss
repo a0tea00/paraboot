@@ -96,6 +96,7 @@ Custom Mixins
 {
 	@extend .main-navtop;
 	padding:30px;
+	z-index:1;
 }
 
 /*main nav fix top*/
@@ -136,28 +137,23 @@ $yellow-headline-color:$brand-primary;
 
 .default-headline{
 	display:inline;
-	float:none !important;
 	line-height:$headline-line-height;
-	clear:both;
 }
 
-@mixin makeGrayHeadline($size){
+@mixin makeGrayHeadline(){
 	@extend .default-headline;
-
-	font-size:$size;
 
 	color:$gray-headline-color;
 	text-shadow:0 .02em #FFF;
 }
-//make a universial color headline maker
-@mixin makeColorHeadline($bgcolor, $size, $txtcolor: #fff){
-	@extend .default-headline;
 
-	font-size:$size;
+@mixin makeColorHeadline($bgcolor, $txtcolor: #fff){
+	@extend .default-headline;
 
 	color:$txtcolor;
 	background:$bgcolor;
 	box-shadow:.3em 0 0 $bgcolor, -.3em 0 0 $bgcolor;
+	padding-right: .3em;
 	&:hover{
 	color: $txtcolor;
 	}
@@ -168,20 +164,25 @@ $yellow-headline-color:$brand-primary;
 }
 
 
-.h3-yellow{
-	@include makeColorHeadline($brand-primary, $font-size-h3);
+.clr-font-yellow{
+	@include makeColorHeadline($brand-primary);
 }
-.h3-green{
-	@include makeColorHeadline($brand-set-green, $font-size-h3);
+.clr-font-green{
+	@include makeColorHeadline($brand-set-green);
 }
 
 /*Panel, Slide, Banner...*/
 
+body, html{
+height:100%;
+}
+
 @mixin makeParaSlide( $min-height,$z-index:-1){
 	position:relative;
+	width:100%;
 	min-height:$min-height;
 	box-sizing:border-box;
-	padding:10vh 10%;	
+	padding:10%;	
 	
 	&:before{
 		content:"";
@@ -197,61 +198,71 @@ $yellow-headline-color:$brand-primary;
 }
 
 .slide-headline-default{
-	@include makeParaSlide( 100vh);	
-	font-size : 3vmax;
+	@include makeParaSlide( 100%);	
 	&:before{
 	  background-color: $brand-set-gray;
 	}
 	h1{
-		@include makeGrayHeadline(5vmax);
+		@include makeGrayHeadline();
 	}
 	
 }
 
 .slide-headline-has-bg{
-	@include makeParaSlide(100vh);	
-	font-size : 3vmax;
+	@include makeParaSlide(100%);	
+	
 	&:before{
-		background-position: 50% 50% /cover;
-		background-attachment: fixed;
-		opacity:0.9;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-attachment:	fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	opacity:0.8;
 	}
 	
 	h1{
-		@include makeColorHeadline($brand-primary, 5vmax);
+		@include makeColorHeadline($brand-primary);
 	}
+
 }
 
 .content-title-default{
-	@include makeParaSlide( 33vh);	
+	@include makeParaSlide(33%);	
 	h1{
-		@include makeGrayHeadline(3vmax);
+		@include makeGrayHeadline();
 	}
 }
 
 .content-title-has-bg{
-	@include makeParaSlide( 33vh);	
+	@include makeParaSlide(33%);	
 	
 	&:before{
-		background-position: 50% 50% /cover;
-		background-attachment: fixed;
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-attachment:	fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	}
 	
 	h1{
-		@include makeColorHeadline($brand-primary, 3vmx);
+		@include makeColorHeadline($brand-primary);
 	}
 }
 
 .content-section{
 	.row {margin-top:1em;}
 	h1{
-	@include makeGrayHeadline($font-size-h1);
+	@include makeGrayHeadline();
 	}
 	h2{
-	@include makeGrayHeadline($font-size-h2);
+	@include makeGrayHeadline();
 	}
 	h3{
-	@include makeGrayHeadline($font-size-h3);
+	@include makeGrayHeadline();
 	}
 }
 
