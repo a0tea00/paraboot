@@ -29,6 +29,7 @@
 {
 	background-image:url(s3.jpg);
 	opacity:0.5;
+
 }
 
 .btn-down{
@@ -43,8 +44,17 @@ font-size:50px;
 .btn-down .glyphicon{
 	text-shadow:0 -1px 10px rgba(0,0,0,.7);
 }
-</style>
 
+#Google-maps{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+
+</style>
 </head>
 <body class= "black-bg">
 <section class="slide-headline-has-bg" id="open">
@@ -62,7 +72,7 @@ font-size:50px;
 <br>
 <h1><span class="clr-font-yellow">}</span></h1>
 </div="row">
-<div class="btn-down"><a href="#top-wrap" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
+<div class="btn-down"><noscript>Enable Javascript on your browser for better experience.<br></noscript><a href="#top-wrap" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
 </section>	
 <div id="top-wrap">
 <nav class="main-navtop-fp" role="navigation">
@@ -91,6 +101,8 @@ font-size:50px;
 	<!--<li><a href="parallax.html" class="">Blog</a></li>-->
 </ul>
 </div>
+
+
 </div><!-- /. -->
 </nav>
 
@@ -113,6 +125,7 @@ font-size:50px;
 <div class="btn-down"><a href="#findme" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
 </section>
 <section class="slide-headline-default" id="findme">
+<div id="Google-maps"></div>
 <div class="row">
 	<div class= "col-xs-12 col-sm-3">
 		<img class="img-circle img-responsive" alt="Trey" src="profile.jpg">
@@ -158,5 +171,82 @@ font-size:50px;
 
   });
 </script>
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP2Urgon3RCXXGquN7MCx1NpEg8R-GC0w">
+    </script>
+    <script type="text/javascript">
+	
+	//location services
+	var defaultLatLng=new google.maps.LatLng(42.673432, -73.792149);
+	
+	function locationOk(position){
+		$('#findme').attr('class','slide-headline-has-bg' );
+		var mapCanvas = document.getElementById("Google-maps");
+		var yourLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+		var directionsDisplay;
+		var directionService = new google.maps.DirectionsService();
+		directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers : true});
+
+		var mapOptions = {
+          center: yourLatlng,
+          zoom: 14,
+		  disableDefaultUI: true,
+		  scrollwheel: false,
+		  zoomControl: true
+        };
+		var map = new google.maps.Map(mapCanvas, mapOptions);
+		
+		var yourLocation = new google.maps.Marker({
+			position: yourLatlng, 
+			map: map, 
+			title:"You",
+			icon: 'icon-you.png'
+		});
+		var MyLocation = new google.maps.Marker({
+			position: defaultLatLng, 
+			map: map, 
+			title:"Me",
+			icon:'icon-me.png'
+		});
+		
+		
+		var request = {
+			origin: yourLatlng,
+			destination:defaultLatLng,
+			travelMode: google.maps.TravelMode.DRIVING
+		};
+		directionService.route(request, function(result, status){
+			if (status == google.maps.DirectionsStatus.OK) {
+			directionsDisplay.setDirections(result);
+			}
+		});
+		
+		directionsDisplay.setMap(map);
+	}
+	
+	function locationFailed(){
+		$('#findme').attr('class','slide-headline-has-bg' );
+		var mapCanvas = document.getElementById("Google-maps");
+		var mapOptions = {
+          center: defaultLatLng,
+          zoom: 14,
+		  disableDefaultUI: true,
+		  scrollwheel: false,
+		  zoomControl: true
+        };
+		var map = new google.maps.Map(mapCanvas, mapOptions);
+		var MyLocation = new google.maps.Marker({
+			position: defaultLatLng, 
+			map: map, 
+			title:"I am here."
+		});
+	}	
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(locationOk, locationFailed);
+} else {
+  locationFailed();
+}    
+    </script>
 </body>
 </html>

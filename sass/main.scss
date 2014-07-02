@@ -144,7 +144,7 @@ $yellow-headline-color:$brand-primary;
 	@extend .default-headline;
 
 	color:$gray-headline-color;
-	text-shadow:0 .02em #FFF;
+	text-shadow:0 1px #FFF;
 }
 
 @mixin makeColorHeadline($bgcolor, $txtcolor: #fff){
