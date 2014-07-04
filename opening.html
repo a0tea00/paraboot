@@ -2,11 +2,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport " content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=600, initial-scale=1">
 <title>H(i)! I'm Trey Huang ::: TreyH.info</title>
 <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
 <link rel="stylesheet" href="css/main.css">
 <style>
+
 #open{
 
 	background: #ffd621; /* Old browsers */
@@ -22,12 +23,12 @@
 
 #design:before
 {
-	background-image:url(s2.jpg);
+	background-image:url('http://media.treyh.s3.amazonaws.com/img/2014/07/123829818abb993106ad15a07634519e.jpg');
 	opacity:1;
 }
 #development:before
 {
-	background-image:url(s3.jpg);
+	background-image:url('http://media.treyh.s3.amazonaws.com/img/2014/07/9b18282af0f18dca9c681b78cd85f51a.jpg');
 	opacity:0.5;
 
 }
@@ -35,7 +36,9 @@
 .btn-down{
 position:absolute;
 bottom: 0;
-left:50%;
+text-align:center;
+left:0;
+right:0;
 font-size:50px;
 }
 .btn-down a,.btn-down a:hover{
@@ -52,7 +55,11 @@ font-size:50px;
 	left:0;
 	right:0;
 }
-
+.site-info{
+	position:fixed;
+	bottom:0;
+	right:0;
+}
 
 </style>
 </head>
@@ -111,17 +118,17 @@ font-size:50px;
 	<br>
 	<h1>Beautiful and Useful</h1>
 	<br>
-	<h1>I believe well designed applications are not just  more beautiful,</h1>
+	<h1><span class="clr-font-green">I believe well designed applications are not just  more beautiful</span></h1>
 	<br>
-	<h1>they are also more useful.</h1>
+	<h1>they are also more useful</h1>
 	<div class="btn-down"><a href="#development" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
 </section>
 <section class="slide-headline-has-bg" id="development">
 <h1>Useful and Beautiful</h1>
 <br>
-<h1>Build something people actually use.</h1>
+<h1><span class="clr-font-green">My goal is to build something people actually use</span></h1>
 <br>
-<h1>It's the right thing to do</h1>
+<h1>because it's the right thing to do</h1>
 <div class="btn-down"><a href="#findme" class="hash-link"><span class="glyphicon glyphicon-chevron-down"></span></a></div>
 </section>
 <section class="slide-headline-default" id="findme">
@@ -148,7 +155,7 @@ font-size:50px;
 </div>
 
 </section>
-
+<div class="site-info"><a href="http://treyh.info">TreyH.info</a> is a personal website of Trey. Copyright &copy; 2014 Trey Huang.</div>
 
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -175,8 +182,7 @@ font-size:50px;
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP2Urgon3RCXXGquN7MCx1NpEg8R-GC0w">
     </script>
     <script type="text/javascript">
-	
-	//location services
+		//location services
 	var defaultLatLng=new google.maps.LatLng(42.673432, -73.792149);
 	
 	function locationOk(position){
@@ -238,7 +244,8 @@ font-size:50px;
 		var MyLocation = new google.maps.Marker({
 			position: defaultLatLng, 
 			map: map, 
-			title:"I am here."
+			title:I'm here!,
+			icon:'icon-me.png'
 		});
 	}	
 
@@ -246,7 +253,7 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(locationOk, locationFailed);
 } else {
   locationFailed();
-}    
+}  
     </script>
 </body>
 </html>
