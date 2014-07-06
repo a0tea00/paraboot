@@ -324,6 +324,9 @@ height:100%;
 {
  margin-top:3px;
 }
+
+
+/*site bottom*/
 #disqus_thread{
 	@extend .col-xs-12;
 }
@@ -331,8 +334,26 @@ height:100%;
 	color:$gray-light;
 	min-height:200px;
 	background:$brand-set-black;
+	
+	.container{
+	 border-top: 10px solid $brand-set-yellow;
+	 border-right: 40px solid $brand-set-yellow;
+	 box-shadow: 10px 0 0 $brand-set-green;
+	}
 
 }
 
-
+/*sides*/
+.cate-side-menu{
+	@extend .col-sm-6;
+	@extend .col-md-12; 
+	@extend .list-unstyled; 
+	@extend .nav;
+}
+.tag-side-list{
+	@extend .col-sm-6;
+	@extend .col-md-12; 
+	@extend .list-inline; 
+	
+}
 
