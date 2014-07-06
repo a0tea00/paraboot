@@ -24,19 +24,19 @@
 @import "bootstrap/input-groups";
 @import "bootstrap/navs";
 @import "bootstrap/navbar";
-@import "bootstrap/breadcrumbs";
+//@import "bootstrap/breadcrumbs";
 @import "bootstrap/pagination";
 @import "bootstrap/pager";
 @import "bootstrap/labels";
-//@import "bootstrap/badges";
+@import "bootstrap/badges";
 @import "bootstrap/jumbotron";
 @import "bootstrap/thumbnails";
-@import "bootstrap/alerts";
+//@import "bootstrap/alerts";
 //@import "bootstrap/progress-bars";
 @import "bootstrap/media";
 @import "bootstrap/list-group";
 //@import "bootstrap/panels";
-//@import "bootstrap/wells";
+@import "bootstrap/wells";
 //@import "bootstrap/close";
 
 // Components w/ JavaScript
@@ -50,14 +50,14 @@
 @import "bootstrap/responsive-utilities";
 
 //fix path
-
+/*
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('/fonts/bootstrap/glyphicons-halflings-regular.eot');
-  src: url('/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('fonts/bootstrap/glyphicons-halflings-regular.eot');
+  src: url('fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
-
+*/
 /*basic tag override*/
 hr{
 	box-shadow:0 -1px 0 1px darken($brand-set-gray, 15% );
@@ -77,13 +77,8 @@ Custom Mixins
 
 /*colors*/
 
-.black-bg
-{
-	background:#000;
-}
-
-.gray-bg{
-	background:$brand-set-gray;
+body{
+	background:$brand-set-black;
 }
 
 .main-navtop
@@ -129,6 +124,14 @@ Custom Mixins
     }
     }
 }
+/*Component enhancement */
+.dropdown-menu li a{
+	border-left:3px solid #fff;
+	}
+.dropdown-menu li a:hover{
+	border-left-color:$brand-set-green;
+	color:$brand-set-green;
+	}
 
 /* headline typo*/
 $headline-line-height : 150%;
@@ -175,6 +178,7 @@ $yellow-headline-color:$brand-primary;
 
 body, html{
 height:100%;
+
 }
 
 @mixin makeParaSlide( $min-height,$z-index:-1){
@@ -230,6 +234,11 @@ height:100%;
 
 .content-title-default{
 	@include makeParaSlide(33%);	
+	padding:5% 10%;
+	background:url('http://static.treyh.info/img/bg.png');
+	&:before{
+		background:$brand-set-gray;
+		}
 	h1{
 		@include makeGrayHeadline();
 	}
@@ -237,11 +246,10 @@ height:100%;
 
 .content-title-has-bg{
 	@include makeParaSlide(33%);	
-	
+	padding:5% 10%;
 	&:before{
 	background-repeat:no-repeat;
 	background-position:center center;
-	background-attachment:	fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -253,7 +261,25 @@ height:100%;
 	}
 }
 
+
+.site-logo{
+	
+	margin:auto;
+	height:128px;
+	width:128px;
+	display:block !important;
+	background:url('http://static.treyh.info/logo.png');
+	text-indent:9999px;
+	overflow:hidden;
+	}
+.site-title-default{
+	@extend .content-title-default;
+	
+}
+
+
 .content-section{
+	background:$brand-set-gray;
 	.row {margin-top:1em;}
 	h1{
 	@include makeGrayHeadline();
@@ -290,7 +316,7 @@ height:100%;
 	@extend .col-xs-12;
 }
 .post-content{
-	@extent .col-xs-12;
+	@extend .col-xs-12;
 	@extend .col-md-9;
 	@extend .col-lg-9;
 }
@@ -298,8 +324,15 @@ height:100%;
 {
  margin-top:3px;
 }
+#disqus_thread{
+	@extend .col-xs-12;
+}
+.footer{
+	color:$gray-light;
+	min-height:200px;
+	background:$brand-set-black;
 
-
+}
 
 
 

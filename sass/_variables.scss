@@ -25,7 +25,7 @@ $brand-set-gray: #DCDCDC;
 $brand-set-green: #008971;
 $brand-set-yellow: #FFCC00;
 $brand-set-lightyellow: #FFFF80;
-$brand-set-black: #000000;
+$brand-set-black: #0f0f0f;
 $brand-set-white: #FFFFFF;
 
 $brand-primary:         $brand-set-yellow;
@@ -88,7 +88,7 @@ $link-hover-color:      darken($link-color, 15%);
 //## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
 
 //* Load fonts from this directory.
-// $icon-font-path: "bootstrap/"
+$icon-font-path: "fonts/bootstrap/";
 //* File name for all font files.
 // $icon-font-name:          "glyphicons-halflings-regular"
 //* Element ID within SVG icon file.
@@ -171,7 +171,7 @@ $component-active-bg:       $brand-primary;
 
 // $btn-info-color:                 #fff
  $btn-info-bg:                    $brand-info;
-// $btn-info-border:                darken($btn-info-bg, 5%)
+ $btn-info-border:                darken($btn-info-bg, 5%);
 
 // $btn-warning-color:              #fff
 // $btn-warning-bg:                 $brand-warning

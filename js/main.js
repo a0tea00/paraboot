@@ -1,14 +1,14 @@
 function toScrollFixedTop(selector, offset){
 var mainNav = $(selector);
-var areaY = $(window).height()*offset; 
+var areaY = mainNav.offset().top; 
 var isFixed = true;
 		$(window).resize(function(){
-			areaY = $(window).height()*offset;
+			mainNav.offset().top; 
 		});
 
 		$(window).scroll( function() {	
 		var doFix = $(window).scrollTop() > areaY;	
-
+		
 		if (doFix && !isFixed) {
 		mainNav.addClass('yellow-navtop-fixedtop');
 		isFixed = true;
