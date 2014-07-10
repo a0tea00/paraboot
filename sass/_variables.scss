@@ -21,10 +21,10 @@
 // $gray-lighter:           lighten(#000, 93.5%) // #eee
 
 // $brand-primary:         #428bca
-$brand-set-gray: #DCDCDC;
+$brand-set-gray: #EAEBE6;
 $brand-set-green: #008971;
 $brand-set-yellow: #FFCC00;
-$brand-set-lightyellow: #FFFF80;
+$brand-set-lightyellow: #E8DDAE;
 $brand-set-black: #0f0f0f;
 $brand-set-white: #FFFFFF;
 
@@ -802,7 +802,7 @@ $progress-bar-bg:             $brand-primary;
 //##
 
 // $code-color:                  #c7254e
- $code-color:                  $gray-dark;
+ $code-color:                  $gray;
 // $code-bg:                     #f9f2f4
  $code-bg:                     $brand-set-lightyellow;
 
@@ -813,7 +813,7 @@ $progress-bar-bg:             $brand-primary;
 // $pre-color:                   $gray-dark
 // $pre-border-color:            #ccc
 $pre-bg:                      $brand-set-lightyellow;
-$pre-color:                   $gray-dark;
+$pre-color:                   $gray;
 $pre-border-color:            $brand-set-lightyellow;
 // $pre-scrollable-max-height:   340px
 
