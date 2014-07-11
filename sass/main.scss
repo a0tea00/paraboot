@@ -278,6 +278,7 @@ height:100%;
 
 .content-section{
 	background:$brand-set-gray;
+	min-height:50%;
 	.row {margin-top:1em;}
 	h1{
 	@include makeGrayHeadline();
@@ -298,6 +299,16 @@ height:100%;
 		content:'"';
 	 }
 	}
+	
+	.jumbotron {
+		//background:darken($brand-set-gray, 5%);
+		box-shadow: 2px 5px 0 $brand-primary, -2px -5px 0  $brand-set-green;
+		p, h1{
+			//color:$gray-dark;
+		}
+		
+	}
+
 }
 
 /*grid to layout*/
