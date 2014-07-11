@@ -135,7 +135,7 @@ body{
 
 /* headline typo*/
 $headline-line-height : 150%;
-$gray-headline-color: darken(#B0B0B0, 10%);
+$gray-headline-color: darken(#B0B0B0, 0%);
 $yellow-headline-color:$brand-primary;
 
 .default-headline{
@@ -147,7 +147,7 @@ $yellow-headline-color:$brand-primary;
 	@extend .default-headline;
 
 	color:$gray-headline-color;
-	text-shadow:0 1px lighten($gray-headline-color,35%), 0 -1px darken($gray-headline-color,15%);
+	text-shadow:0 1px lighten($gray-headline-color,50%), 0 -1px darken($gray-headline-color,15%);
 }
 
 @mixin makeColorHeadline($bgcolor, $txtcolor: #fff){
@@ -237,11 +237,13 @@ height:100%;
 	@include makeParaSlide(33%);	
 	padding:5% 10%;
 	background:url('http://static.treyh.info/img/bg.png');
+	font-size:150%;
 	&:before{
 		background:$brand-set-gray;
 		}
 	h1{
 		@include makeGrayHeadline();
+		font-size:300%;
 	}
 }
 
@@ -257,8 +259,11 @@ height:100%;
 	background-size: cover;
 	}
 	
+	font-size:150%;
+	
 	h1{
 		@include makeColorHeadline($brand-primary);
+		font-size:300%;
 	}
 }
 
@@ -290,6 +295,10 @@ height:100%;
 	}
 	h3{
 	@include makeGrayHeadline();
+	}
+	p img{
+		box-shadow: 5px 5px 0 $brand-set-green, -5px -5px 0 $brand-primary;
+		margin: 5px;
 	}
 }
 
